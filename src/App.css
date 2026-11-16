@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
+
+:root {
+  --cream: #fbf1e6;
+  --ink: #2a1b1b;
+  --maroon: #6b0f1a;
+  --pink: #f4a6c4;
+  --butter: #fbeaa0;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 20px;
+}
+
+.app {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 48px 5%;
+}
+
+.app h1 {
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 56px);
+  color: var(--maroon);
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.catalog {
+  display: grid;
+  gap: 32px;
+}
+
+.course-card {
+  position: relative;
+  background: #fff;
+  padding: 28px 24px 22px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  border-top: 8px solid var(--pink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.catalog .course-card:nth-child(odd) { transform: rotate(-1deg); }
+.catalog .course-card:nth-child(even) { transform: rotate(1deg); }
+
+.course-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+.course-card h2 {
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--maroon);
+  margin: 12px 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed var(--ink);
+}
+
+.course-card p {
+  margin: 6px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.badge.required {
+  background: #e05a5a;
+  color: #fff;
+}
+
+.badge.optional {
+  background: #cfcac4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-card { transition: none; }
+}
